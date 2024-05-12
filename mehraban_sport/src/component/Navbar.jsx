@@ -10,7 +10,7 @@ const Navbar = () => {
       <div className='w-full max-h-80px flex justify-between items-center px-2'>
         {/* ---- authentication ------ */}
         <div className='-mt-10'>
-          <p className='text-xl text-black'>ورود / ثبت نام</p>
+          <p className='text-xl text-[#ffff]'>ورود / ثبت نام</p>
         </div>
         {/* ---- search bar ------ */}
         <div className='flex -mt-10'>
