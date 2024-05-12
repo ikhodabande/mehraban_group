@@ -5,6 +5,14 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    fontFamily:{
+      iranyekan: ['iranyekan', 'sans-serif'],
+      iranyekanBold: ['iranyekanBold', 'sans-serif'],
+      iranyekanLight: ['iranyekanLight', 'sans-serif'],
+    },
+  
   },
+
+ 
   plugins: [],
 }
