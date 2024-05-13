@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { BiHomeAlt2, BiSolidHomeAlt2, BiSolidCategoryAlt, BiCategoryAlt, BiSolidShoppingBag, BiShoppingBag     } from "react-icons/bi";
 import { GoPerson, GoPersonFill  } from "react-icons/go";
+import productContext from './context/product';
 
 
 
@@ -10,6 +11,8 @@ const Menu = () => {
  const[categoriesIcon, setCategoriesIcon] = useState(false)
  const[shopIcon, setShopIcon] = useState(false)
  const[loginIcon, setLoginIcon] = useState(false)
+
+ const {searchBar, setSearchBar} = useContext(productContext);
 
  const homeIconHandler =()=> {
   if(shopIcon === true){
@@ -56,7 +59,7 @@ const loginIconHandler =()=> {
 };
 
   return (
-    <section name="Menu" className='w-full h-[55px] fixed bottom-0 sm:hidden z-20 grid grid-cols-4 items-center bg-[#d3d3d33b]'>
+    <section name="Menu" className='w-full h-[55px] fixed bottom-0 sm:hidden z-10 grid grid-cols-4 items-center bg-[#d3d3d33b]'>
          <div onClick={loginIconHandler} className='flex flex-col items-center'>{ loginIcon ? 
          <div className='w-full h-full flex flex-col items-center'>
          <GoPersonFill className='text-3xl mx-auto hover:cursor-pointer' />

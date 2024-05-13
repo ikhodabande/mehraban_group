@@ -1,19 +1,19 @@
-import React from 'react'
-import Home from './component/Home'
+import React, {useState} from 'react'
 import Navbar from './component/Navbar'
-import Story from './component/Story'
-import Main from './component/Main'
+import Home from './component/Home'
 import Menu from './component/Menu'
+import ProductContext from './component/context/product'
+import { Routes, Route } from 'react-router-dom'
 
 const App = () => {
+  const [serachBar, setSearchBar] = useState(false)
   return (
     <>
+    <ProductContext.Provider value={{serachBar, setSearchBar}}>
     <Navbar/>
-    <Menu/>
-    {/* <Story/> */}
     <Home/>
-    {/* <Main/> */}
-    
+    <Menu/>
+    </ProductContext.Provider>
     </>
   )
 }

@@ -1,18 +1,25 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import mehrabanlogo from "../assets/Mehrabansport-Logo1.png"
 import { IoIosArrowDown  } from "react-icons/io";
 import { FiSearch } from "react-icons/fi";
 import { GoPerson } from "react-icons/go";
 import { MdOutlineShoppingBag } from "react-icons/md";
+import productContext from './context/product';
+import { GoX } from "react-icons/go";
 
 const Navbar = () => {
-  return (
-    <section name="Navbar" className='w-full h-[80px] font-iranyekan  grid grid-row-2 absolute top-0 z-10 '>
- 
-    
-      {/* ---- upper nav ------ */}
-      <div className='w-full max-h-80px flex md:justify-between justify-around items-center px-2'>
+//  const [serachBar, setSearchBar] = useState(false)
+ const {serachBar, setSearchBar} = useContext(productContext)
+ const searchHandler =()=> {
+  setSearchBar(!serachBar)
+  console.log("hello")
+ }
 
+  return (
+    <section name="Navbar" className='w-full h-full font-iranyekan  grid grid-row-2 absolute top-0 z-10 '>
+   
+      {/* ---- upper nav ------ */}
+      <div className='w-full max-h-[80px] flex md:justify-between justify-around items-center px-2'>
 
      {/* ---- authentication ------ */}
 
@@ -26,7 +33,6 @@ const Navbar = () => {
         <MdOutlineShoppingBag className='text-white text-2xl ' />
         </div>
         </div>
-
 
     {/* ---- search bar ------ */}
 
@@ -51,25 +57,26 @@ const Navbar = () => {
                <input type="text" className='flex-1 mx-1 h-[90%] rounded-r-full outline-none border-none text-[#000] text-right px-4 placeholder:text-black' placeholder='.... جستجوی محصولات ' />
         </div>
 
-
     {/* ---- logo image ------ */}
         
           <img className='w-[120px] sm:flex hidden' src={mehrabanlogo} alt="" />
         
 
-
    {/* ------ Mobile view ------- */}
            
-           <div className='sm:hidden w-full h-[80%] flex items-center bg-[#edededd2] rounded-xl justify-end px-4'>
+           <div onClick={searchHandler} className='sm:hidden w-full h-[80%] flex items-center bg-[#edededd2] rounded-xl justify-end px-4'>
            <p className='mx-2 text-3xl font-jalayarBold text-[#ef6f14c2] '> مهرآبان اسپرت</p>
            <p className='text-[#6e6e6e]'>جستجو در</p>
            <FiSearch className='text-2xl  text-[#6e6e6e]'/>
            </div>
-         
-
+      
       </div>
 
+      {/* search bar in mobile view */}
 
+       <div className={`${serachBar ? 'sm:hidden w-full h-full bg-white z-50 absolute top-0 bottom-0': 'sm:hidden hidden'}`}>
+       <GoX onClick={searchHandler} className='text-3xl absolute top-5 right-5' />
+       </div>
 
 
 
