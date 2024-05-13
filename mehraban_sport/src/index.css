@@ -8,25 +8,61 @@
   box-sizing: border-box;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ff7700d8;
+  border-radius: 10px;
+  transition: all 1.2s ease-in-out;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  cursor:ns-resize;
+}
 @layer base {
   @font-face {
     font-family: 'iranyekan';
     src: url(./Fonts/iranyekan.ttf) format('truetype')
   }
 }
-
-
 @layer base {
   @font-face {
     font-family: 'iranyekanBold';
     src:url(./Fonts/iranyekanwebbold.ttf) format('truetype')
   }
 }
-
-
 @layer base {
   @font-face {
     font-family: 'iranyekanLight';
     src:url(./Fonts/iranyekanweblight.ttf) format('truetype')
+  }
+}
+@layer base {
+  @font-face {
+    font-family: 'jalayar';
+    src:url(./Fonts/TKT-jalayer\ Regular.otf) format('opentype')
+  }
+}
+@layer base {
+  @font-face {
+    font-family: 'jalayarBold';
+    src:url(./Fonts/TKT-jalayer\ Bold.otf) format('opentype')
+  }
+}
+@layer base {
+  @font-face {
+    font-family: 'jalayarMedium';
+    src:url(./Fonts/TKT-jalayer\ Medium.otf) format('opentype')
   }
 }
