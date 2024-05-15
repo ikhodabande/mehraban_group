@@ -9,10 +9,11 @@ import { GoX } from "react-icons/go";
 
 const Navbar = () => {
 //  const [serachBar, setSearchBar] = useState(false)
- const {serachBar, setSearchBar} = useContext(productContext)
+ const {searchBar, setSearchBar} = useContext(productContext)
+ 
  const searchHandler =()=> {
-  setSearchBar(!serachBar)
-  console.log("hello")
+  setSearchBar(!searchBar)
+  
  }
 
   return (
@@ -74,7 +75,7 @@ const Navbar = () => {
 
       {/* search bar in mobile view */}
 
-       <div className={`${serachBar ? 'sm:hidden w-full h-full bg-white z-50 absolute top-0 bottom-0': 'sm:hidden hidden'}`}>
+       <div className={`${searchBar ? 'sm:hidden w-full h-full bg-white z-50 absolute top-0 bottom-0 opacity-100 translate-x-[0%] transition-all duration-300': ' bg-white w-full h-screen absolute  -translate-x-[100%]  opacity-0 transition-all duration-300'}`}>
        <GoX onClick={searchHandler} className='text-3xl absolute top-5 right-5' />
        </div>
 

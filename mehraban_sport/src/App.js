@@ -6,10 +6,10 @@ import ProductContext from './component/context/product'
 import { Routes, Route } from 'react-router-dom'
 
 const App = () => {
-  const [serachBar, setSearchBar] = useState(false)
+  const [searchBar, setSearchBar] = useState(false)
   return (
     <>
-    <ProductContext.Provider value={{serachBar, setSearchBar}}>
+    <ProductContext.Provider value={{searchBar, setSearchBar}}>
     <Navbar/>
     <Home/>
     <Menu/>

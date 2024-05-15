@@ -7,13 +7,12 @@ import productContext from './context/product';
 
 
 const Menu = () => {
+ const {searchBar,setSearchBar} = useContext(productContext);
  const[homeIcon, setHomeIcon] = useState(false)
  const[categoriesIcon, setCategoriesIcon] = useState(false)
  const[shopIcon, setShopIcon] = useState(false)
  const[loginIcon, setLoginIcon] = useState(false)
-
- const {searchBar, setSearchBar} = useContext(productContext);
-
+ 
  const homeIconHandler =()=> {
   if(shopIcon === true){
     shopIconHandler();
@@ -59,7 +58,7 @@ const loginIconHandler =()=> {
 };
 
   return (
-    <section name="Menu" className='w-full h-[55px] fixed bottom-0 sm:hidden z-10 grid grid-cols-4 items-center bg-[#d3d3d33b]'>
+    <section name="Menu" className={`${searchBar ? ' translate-y-[50%] opacity-0 transition-all 200ms ease-in-out': 'w-full h-[55px] fixed bottom-0 sm:hidden z-10 grid grid-cols-4 items-center bg-[#d3d3d33b]'}`}>
          <div onClick={loginIconHandler} className='flex flex-col items-center'>{ loginIcon ? 
          <div className='w-full h-full flex flex-col items-center'>
          <GoPersonFill className='text-3xl mx-auto hover:cursor-pointer' />
