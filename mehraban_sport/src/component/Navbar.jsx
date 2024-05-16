@@ -8,6 +8,7 @@ import productContext from './context/product';
 import { GoX } from "react-icons/go";
 
 const Navbar = () => {
+ const [dropdown, setDropDown] = useState(true)
 //  const [serachBar, setSearchBar] = useState(false)
  const {searchBar, setSearchBar} = useContext(productContext)
  
@@ -15,6 +16,8 @@ const Navbar = () => {
   setSearchBar(!searchBar)
   
  }
+
+ const handleDropDownCategories =()=> setDropDown(!dropdown);
 
   return (
     <section name="Navbar" className='w-full h-full font-iranyekan  grid grid-row-2 absolute top-0 z-10 '>
@@ -37,13 +40,16 @@ const Navbar = () => {
 
     {/* ---- search bar ------ */}
 
-        <div className='sm:flex hidden items-center bg-[#ef6f146f]  rounded-full w-[40%] h-[45%] mx-20 md:mx-0'>
+        <div className='sm:flex hidden items-center bg-[#ef6f146f]  rounded-full w-[40%] h-[65%]  mx-20 md:mx-0'>
            <FiSearch className='text-[#fff] text-3xl mx-6 hidden md:flex' />
-              <div className='bg-[#ef6f14c2]  text-white md:mx-0 mx-4 px-4 py-2 flex flex-row-reverse items-center rounded-full hover:cursor-pointer'>
+           <div className='flex flex-col items-center mt-[342px]' >
+            <div onClick={handleDropDownCategories} className='bg-[#ef6f14c2]  text-white md:mx-0 mx-4 px-4 py-2 flex flex-row-reverse items-center rounded-full z-20 hover:cursor-pointer'>
                 <p className='px-2 lg:flex hidden'>انتخاب دسته بندی</p>
                 <IoIosArrowDown className='mt-1' />
-                <ul className='hidden'>
-                  <li>اورال</li>
+               </div>
+               <ul className={`${dropdown ? 'text-end -z-20 w-[160px] opacity-0 -trnslate-y-[100%] transition-all duration-300': 'text-end w-[160px]   text-white backdrop-blur-sm bg-[#b0b0b02c] border-2  border-[#ca6d04] rounded transition-all duration-300'
+               }`}>
+                  <li >اورال</li>
                   <li>پیشنهاد ویژه</li>
                   <li>تخفیفی ها</li>
                   <li>تیشرت ورزشی زنانه</li>
@@ -54,7 +60,8 @@ const Navbar = () => {
                   <li>نیم تنه ورزشی</li>
                   <li>هدبند</li>
                 </ul>
-               </div>
+           </div>
+              
                <input type="text" className='flex-1 mx-1 h-[90%] rounded-r-full outline-none border-none text-[#000] text-right px-4 placeholder:text-black' placeholder='.... جستجوی محصولات ' />
         </div>
 
@@ -65,7 +72,7 @@ const Navbar = () => {
 
    {/* ------ Mobile view ------- */}
            
-           <div onClick={searchHandler} className='sm:hidden w-full h-[80%] flex items-center bg-[#edededd2] rounded-xl justify-end px-4'>
+           <div onClick={searchHandler} className='sm:hidden w-[90%] h-[8%] top-2 fixed z-100 flex items-center bg-[#edededd2] rounded-xl justify-end px-4'>
            <p className='mx-2 text-3xl font-jalayarBold text-[#ef6f14c2] '> مهرآبان اسپرت</p>
            <p className='text-[#6e6e6e]'>جستجو در</p>
            <FiSearch className='text-2xl  text-[#6e6e6e]'/>

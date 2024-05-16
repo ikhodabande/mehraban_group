@@ -8,9 +8,89 @@
   box-sizing: border-box;
 }
 
+
+
+li{
+  width: 100%;
+  border-bottom: 2px solid rgba(214, 214, 214, 0.297);
+  padding: 5px 4px;
+  border-radius: 5px;
+
+  &:hover {
+  cursor: pointer;
+  background: #6c6c6c5f;
+  }
+}
+
+.img1{
+  background-image: url(./assets/Products/krops/New-Jordan/jordan1.jpg);
+  background-size: cover;
+  
+
+  &:hover{
+    animation: changeImg ease-in-out 4s ;
+  }
+}
+
+@keyframes changeImg {
+  0%{
+    background-image: url(./assets/Products/krops/New-Jordan/jordan1.jpg);
+  }
+  25%{
+    background-image: url(./assets/Products/krops/New-Jordan/jordan2.jpg);
+  }
+  50%{
+    background-image: url(./assets/Products/krops/New-Jordan/jordan3.jpg);
+  }
+  75%{
+    background-image: url(./assets/Products/krops/New-Jordan/jordan4.jpg);
+  }
+  100%{
+    background-image: url(./assets/Products/krops/New-Jordan/jordan1.jpg);
+  }
+}
+
+
+.img2{
+  background-image: url(./assets/Products/krops/Khoffashi/photo_5850537483937365902_y.jpg);
+  background-size: cover;
+  
+
+  &:hover{
+    animation: changeImg2 ease-in-out 3s ;
+  }
+}
+
+@keyframes changeImg2 {
+  0%{
+    background-image: url(./assets/Products/krops/Khoffashi/photo_5850537483937365902_y.jpg);
+  }
+  50%{
+    background-image: url(./assets/Products/krops/Khoffashi/photo_5850537483937365903_y.jpg);
+  }
+  100%{
+    background-image: url(./assets/Products/krops/Khoffashi/photo_5850537483937365902_y.jpg);
+  }
+}
+
+
+.img3{
+  background-image: url(./assets/Products/krops/Kimono/photo_5850537483937365908_y.jpg);
+  background-size: cover;
+  
+
+  &:hover{
+    
+  }
+}
+
+
+
+
 /* width */
 ::-webkit-scrollbar {
   width: 5px;
+  height: 5px;
 }
 
 /* Track */
@@ -28,7 +108,6 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
-  cursor:ns-resize;
 }
 @layer base {
   @font-face {
