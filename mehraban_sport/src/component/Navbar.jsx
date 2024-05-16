@@ -20,7 +20,7 @@ const Navbar = () => {
  const handleDropDownCategories =()=> setDropDown(!dropdown);
 
   return (
-    <section name="Navbar" className='w-full h-full font-iranyekan  grid grid-row-2 absolute top-0 z-10 '>
+    <section name="Navbar" className='w-full h-full font-iranyekan  grid grid-row-2 absolute top-0 z-10  '>
    
       {/* ---- upper nav ------ */}
       <div className='w-full max-h-[80px] flex md:justify-between justify-around items-center px-2'>
@@ -71,21 +71,23 @@ const Navbar = () => {
         
 
    {/* ------ Mobile view ------- */}
-           
-           <div onClick={searchHandler} className='sm:hidden w-[90%] h-[8%] top-2 fixed z-100 flex items-center bg-[#edededd2] rounded-xl justify-end px-4'>
+        
+          
+          <div onClick={searchHandler} className='sm:hidden w-[90%] h-[55px] top-2 fixed z-50 flex items-center bg-[#edededd2] rounded-xl justify-end px-4'>
            <p className='mx-2 text-3xl font-jalayarBold text-[#ef6f14c2] '> مهرآبان اسپرت</p>
            <p className='text-[#6e6e6e]'>جستجو در</p>
            <FiSearch className='text-2xl  text-[#6e6e6e]'/>
            </div>
+          
       
-      </div>
+      
 
       {/* search bar in mobile view */}
 
-       <div className={`${searchBar ? 'sm:hidden w-full h-full bg-white z-50 absolute top-0 bottom-0 opacity-100 translate-x-[0%] transition-all duration-300': ' bg-white w-full h-screen absolute  -translate-x-[100%]  opacity-0 transition-all duration-300'}`}>
-       <GoX onClick={searchHandler} className='text-3xl absolute top-5 right-5' />
+       <div className={`${searchBar ? 'sm:hidden w-full h-full bg-white z-50 fixed  bottom-0 opacity-100 translate-x-[0%] transition-all duration-300': ' bg-white w-full h-screen absolute  -translate-x-[100%]  opacity-0 transition-all duration-300'}`}>
+       <GoX onClick={searchHandler} className='text-3xl absolute top-5 right-8' />
        </div>
-
+</div>
 
 
       {/* ---- downer nav ------ */}
