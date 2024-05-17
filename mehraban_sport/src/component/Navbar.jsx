@@ -40,7 +40,7 @@ const Navbar = () => {
 
     {/* ---- search bar ------ */}
 
-        <div className='sm:flex hidden items-center bg-[#ef6f146f]  rounded-full w-[40%] h-[65%]  mx-20 md:mx-0'>
+        <div className='sm:flex hidden items-center bg-[#ef6f146f]  rounded-full w-[40%] h-[65%] z-20  mx-20 md:mx-0'>
            <FiSearch className='text-[#fff] text-3xl mx-6 hidden md:flex' />
            <div className='flex flex-col items-center mt-[342px]' >
             <div onClick={handleDropDownCategories} className='bg-[#ef6f14c2]  text-white md:mx-0 mx-4 px-4 py-2 flex flex-row-reverse items-center rounded-full z-20 hover:cursor-pointer'>

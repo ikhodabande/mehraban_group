@@ -5,6 +5,7 @@ import Menu from './component/Menu'
 import ProductContext from './component/context/product'
 import { Routes, Route } from 'react-router-dom'
 import Main from './component/Main'
+import Prouduct from './component/Prouduct'
 
 const App = () => {
   const [searchBar, setSearchBar] = useState(false)
@@ -15,7 +16,7 @@ const App = () => {
     <Menu/>
     <Home/>
     <Main/>
-    
+    <Prouduct/>
     </ProductContext.Provider>
     </>
   )
